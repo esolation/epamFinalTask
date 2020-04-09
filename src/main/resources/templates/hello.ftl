@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-
+<#list orders as order>
+<#if order.getPhotos()??>
+    <#list order.getPhotos() as photo>
+<div><img src="/img/${photo}" alt=""></div>
+    </#list>
+</#if>
+</#list>
 </body>
 </html>

@@ -12,7 +12,8 @@ public class Order {
     private Long id;
     private String carModel;
     private String description;
-    private Double coast;
+    private Double cost;
+    private String shortDescription;
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "order_photo", joinColumns = @JoinColumn(name="order_id"))
     private List<String> photos = new ArrayList<>();
@@ -37,12 +38,12 @@ public class Order {
         this.description = description;
     }
 
-    public double getCoast() {
-        return coast;
+    public double getCost() {
+        return cost;
     }
 
-    public void setCoast(double coast) {
-        this.coast = coast;
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 
     public List<String> getPhotos() {
@@ -59,5 +60,13 @@ public class Order {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 }

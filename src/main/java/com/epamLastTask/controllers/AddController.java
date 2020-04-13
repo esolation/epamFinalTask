@@ -36,6 +36,7 @@ public class AddController {
                 String resultFileName = uuidFile + "." + fileName.getOriginalFilename();
                 fileName.transferTo(new File(uploadPath+"/"+resultFileName));
                 order.setPhotos(resultFileName);
+                order.setActive(true);
         }
         }
         orderRepo.save(order);
